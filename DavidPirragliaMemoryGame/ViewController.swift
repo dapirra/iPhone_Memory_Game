@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private var game: GameModel = GameModel()
+    private var lastTag: Int = -1
+    private var lastButtons: [UIButton] = []
+    private var flipLast2Cards: Bool = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,32 +30,57 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblMovesMade: UILabel!
 
     @IBAction func btnClick(_ sender: UIButton) {
-        var newLabel: String
-        var image: UIImage
+        var label: String = ""
 
-        if let movesString = lblMovesMade.text {
-            var movesMade = Int(movesString)!
-            movesMade += 1
-            lblMovesMade.text = String(movesMade)
+        if game.isAlreadyMatched(sender.tag) || lastTag == sender.tag {
+            return
         }
 
-        if let label = sender.titleLabel!.text {
-            newLabel = label
+        if let movesString = lblMovesMade.text, let movesMade = Int(movesString) {
+            lblMovesMade.text = String(movesMade + 1)
+        }
+
+        if let testLabel = sender.titleLabel!.text {
+            label = testLabel
+        }
+
+        if label == "" {
+            showCard(sender, game.getEmoji(sender.tag))
         } else {
-            newLabel = ""
+            hideCard(sender)
         }
 
-        if newLabel == "" {
-            newLabel = "Hello"
-            image = UIImage()
-        } else {
-            newLabel = ""
-            image = (UIImage(named: "card.jpg") as UIImage?)!
+        if lastButtons.count == 2 {
+            if flipLast2Cards {
+                hideCard(lastButtons[0])
+                hideCard(lastButtons[1])
+                flipLast2Cards = false
+            }
+            lastButtons = []
+        } else if lastButtons.count == 1 {
+            if game.isMatch(sender.tag, lastButtons[0].tag) {
+                if game.isWin() {
+                    print("You Win")
+                }
+            } else {
+                flipLast2Cards = true
+            }
         }
 
-        sender.setTitle(newLabel, for: UIControlState.normal)
+        lastTag = sender.tag
+        lastButtons.append(sender)
+    }
 
-        sender.setBackgroundImage(image, for: UIControlState.normal)
+    func showCard(_ button: UIButton, _ text: String) {
+        button.setTitle(text, for: UIControlState.normal)
+        button.titleLabel!.text = text
+        button.setBackgroundImage(UIImage(), for: UIControlState.normal)
+    }
+
+    func hideCard(_ button: UIButton) {
+        button.setTitle("", for: UIControlState.normal)
+        button.titleLabel!.text = ""
+        button.setBackgroundImage((UIImage(named: "card.jpg") as UIImage?)!, for: UIControlState.normal)
     }
 }
 

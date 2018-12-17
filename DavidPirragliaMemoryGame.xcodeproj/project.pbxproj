@@ -101,14 +101,14 @@
 		5BD0615321C7413C00D0A96E /* DavidPirragliaMemoryGame */ = {
 			isa = PBXGroup;
 			children = (
-				5BD0618221C798E100D0A96E /* Node.swift */,
 				5BD0615421C7413C00D0A96E /* AppDelegate.swift */,
 				5BD0615621C7413C00D0A96E /* ViewController.swift */,
+				5BD0618621C7A28B00D0A96E /* GameModel.swift */,
+				5BD0618221C798E100D0A96E /* Node.swift */,
 				5BD0615821C7413C00D0A96E /* Main.storyboard */,
 				5BD0615B21C7413C00D0A96E /* Assets.xcassets */,
 				5BD0615D21C7413C00D0A96E /* LaunchScreen.storyboard */,
 				5BD0616021C7413C00D0A96E /* Info.plist */,
-				5BD0618621C7A28B00D0A96E /* GameModel.swift */,
 			);
 			path = DavidPirragliaMemoryGame;
 			sourceTree = "<group>";

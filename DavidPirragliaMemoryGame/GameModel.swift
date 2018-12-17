@@ -9,23 +9,36 @@
 import Foundation
 
 class GameModel {
-    private var nodes : [Node] =
-        [Node("😀"), Node("😀"),
-        Node("😡"), Node("😡"),
-        Node("😈"), Node("😈"),
-        Node("🤢"), Node("🤢"),
-        Node("😎"), Node("😎"),
-        Node("👽"), Node("👽"),
-        Node("👍"), Node("👍"),
-        Node("🙃"), Node("🙃"),
-        Node("😰"), Node("😰"),
-        Node("💩"), Node("💩")]
+    private var defaultNodes : [Node] = []
+    private var nodes: [Node] = []
 
     init() {
-        //
+        reset()
     }
 
     func reset() {
+        nodes = []
+        defaultNodes =
+            [Node("😀"), Node("😀"),
+             Node("😡"), Node("😡"),
+             Node("😈"), Node("😈"),
+             Node("🤢"), Node("🤢"),
+             Node("😎"), Node("😎"),
+             Node("👽"), Node("👽"),
+             Node("👍"), Node("👍"),
+             Node("🙃"), Node("🙃"),
+             Node("😰"), Node("😰"),
+             Node("💩"), Node("💩")]
+        shuffle()
+    }
+
+    // Use the Fisher-Yates Algorithm to shuffle the nodes
+    func shuffle() {
+        for _ in defaultNodes {
+            let rand = Int(arc4random_uniform(UInt32(defaultNodes.count)))
+            nodes.append(defaultNodes[rand])
+            defaultNodes.remove(at: rand)
+        }
     }
 
     func getEmoji(_ tag: Int) -> String {

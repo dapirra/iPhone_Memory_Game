@@ -14,6 +14,8 @@
 		5BD0615F21C7413C00D0A96E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD0615D21C7413C00D0A96E /* LaunchScreen.storyboard */; };
 		5BD0616A21C7413C00D0A96E /* DavidPirragliaMemoryGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD0616921C7413C00D0A96E /* DavidPirragliaMemoryGameTests.swift */; };
 		5BD0617521C7413C00D0A96E /* DavidPirragliaMemoryGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD0617421C7413C00D0A96E /* DavidPirragliaMemoryGameUITests.swift */; };
+		5BD0618321C798E100D0A96E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD0618221C798E100D0A96E /* Node.swift */; };
+		5BD0618721C7A28B00D0A96E /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD0618621C7A28B00D0A96E /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		5BD0617021C7413C00D0A96E /* DavidPirragliaMemoryGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DavidPirragliaMemoryGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD0617421C7413C00D0A96E /* DavidPirragliaMemoryGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DavidPirragliaMemoryGameUITests.swift; sourceTree = "<group>"; };
 		5BD0617621C7413C00D0A96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BD0618221C798E100D0A96E /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		5BD0618621C7A28B00D0A96E /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +101,14 @@
 		5BD0615321C7413C00D0A96E /* DavidPirragliaMemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				5BD0618221C798E100D0A96E /* Node.swift */,
 				5BD0615421C7413C00D0A96E /* AppDelegate.swift */,
 				5BD0615621C7413C00D0A96E /* ViewController.swift */,
 				5BD0615821C7413C00D0A96E /* Main.storyboard */,
 				5BD0615B21C7413C00D0A96E /* Assets.xcassets */,
 				5BD0615D21C7413C00D0A96E /* LaunchScreen.storyboard */,
 				5BD0616021C7413C00D0A96E /* Info.plist */,
+				5BD0618621C7A28B00D0A96E /* GameModel.swift */,
 			);
 			path = DavidPirragliaMemoryGame;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD0618721C7A28B00D0A96E /* GameModel.swift in Sources */,
+				5BD0618321C798E100D0A96E /* Node.swift in Sources */,
 				5BD0615721C7413C00D0A96E /* ViewController.swift in Sources */,
 				5BD0615521C7413C00D0A96E /* AppDelegate.swift in Sources */,
 			);

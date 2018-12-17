@@ -60,7 +60,9 @@ class ViewController: UIViewController {
         } else if lastButtons.count == 1 {
             if game.isMatch(sender.tag, lastButtons[0].tag) {
                 if game.isWin() {
-                    print("You Win")
+                    let alert = UIAlertController(title: "Congratulations", message: "You Win", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             } else {
                 flipLast2Cards = true

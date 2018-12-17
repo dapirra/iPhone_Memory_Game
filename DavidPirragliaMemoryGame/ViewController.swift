@@ -25,6 +25,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblMovesMade: UILabel!
 
     @IBAction func btnClick(_ sender: UIButton) {
+        var newLabel: String
+        var image: UIImage
+
+        if let movesString = lblMovesMade.text {
+            var movesMade = Int(movesString)!
+            movesMade += 1
+            lblMovesMade.text = String(movesMade)
+        }
+
+        if let label = sender.titleLabel!.text {
+            newLabel = label
+        } else {
+            newLabel = ""
+        }
+
+        if newLabel == "" {
+            newLabel = "Hello"
+            image = UIImage()
+        } else {
+            newLabel = ""
+            image = (UIImage(named: "card.jpg") as UIImage?)!
+        }
+
+        sender.setTitle(newLabel, for: UIControlState.normal)
+
+        sender.setBackgroundImage(image, for: UIControlState.normal)
     }
 }
 

@@ -23,5 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lblMovesLeft: UILabel!
 
     @IBOutlet weak var lblMovesMade: UILabel!
+
+    @IBAction func btnClick(_ sender: UIButton) {
+    }
 }
 

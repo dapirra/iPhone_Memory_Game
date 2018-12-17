@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var lblMovesLeft: UILabel!
 
+    @IBOutlet weak var lblMovesMade: UILabel!
 }
 

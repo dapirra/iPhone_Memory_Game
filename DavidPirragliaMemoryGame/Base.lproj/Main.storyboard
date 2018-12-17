@@ -70,6 +70,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="lblMovesLeft" destination="Y2P-UA-iya" id="q0h-HS-bUo"/>
+                        <outlet property="lblMovesMade" destination="Yyz-B9-zhs" id="bRs-Hq-EEI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController {
 
     private var game: GameModel = GameModel()
-    private var lastTag: Int = -1
     private var last2Cards: [UIButton] = []
     private var flipLast2Cards: Bool = false
     private var allButtons: [UIButton] = []
@@ -51,8 +50,20 @@ class ViewController: UIViewController {
 
     @IBAction func btnClick(_ sender: UIButton) {
         // Return if the card is already matched or if it was pressed twice
-        if game.isAlreadyMatched(sender.tag) || lastTag == sender.tag {
+        if game.isAlreadyMatched(sender.tag) {
             return
+        }
+
+        if last2Cards.count > 0 {
+            if sender.tag == last2Cards[0].tag {
+                return
+            }
+        }
+
+        if last2Cards.count > 1 {
+            if sender.tag == last2Cards[1].tag {
+                return
+            }
         }
 
         var label: String = ""
@@ -114,7 +125,6 @@ class ViewController: UIViewController {
             }
         }
 
-        lastTag = sender.tag
         last2Cards.append(sender)
     }
 
@@ -138,7 +148,6 @@ class ViewController: UIViewController {
         lblMovesLeft.text = "50"
 
         last2Cards = []
-        lastTag = -1
 
         if allButtons == [] {
             allButtons = [

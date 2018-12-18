@@ -66,19 +66,7 @@ class ViewController: UIViewController {
             }
         }
 
-        var label: String = ""
-
-        // Get the text from the button
-        if let testLabel = sender.titleLabel!.text {
-            label = testLabel
-        }
-
-        // Show or hide the card
-        if label == "" {
-            showCard(sender, game.getEmoji(sender.tag))
-        } else {
-            hideCard(sender)
-        }
+        showCard(sender, game.getEmoji(sender.tag))
 
         if last2Cards.count == 2 {
             if flipLast2Cards { // Flip the previous 2 cards back over

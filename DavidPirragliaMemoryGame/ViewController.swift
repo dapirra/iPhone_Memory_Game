@@ -36,10 +36,6 @@ class ViewController: UIViewController {
             return
         }
 
-        if let movesString = lblMovesMade.text, let movesMade = Int(movesString) {
-            lblMovesMade.text = String(movesMade + 1)
-        }
-
         if let testLabel = sender.titleLabel!.text {
             label = testLabel
         }
@@ -66,6 +62,14 @@ class ViewController: UIViewController {
                 }
             } else {
                 flipLast2Cards = true
+            }
+
+            if let movesMadeString = lblMovesMade.text,
+                let movesLeftString = lblMovesLeft.text,
+                let movesMade = Int(movesMadeString),
+                let movesLeft = Int(movesLeftString) {
+                lblMovesMade.text = String(movesMade + 1)
+                lblMovesLeft.text = String(movesLeft - 1)
             }
         }
 

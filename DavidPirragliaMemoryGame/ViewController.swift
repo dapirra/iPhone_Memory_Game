@@ -50,16 +50,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var button19: UIButton!
 
     @IBAction func btnClick(_ sender: UIButton) {
+        // Return if the card is already matched or if it was pressed twice
         if game.isAlreadyMatched(sender.tag) || lastTag == sender.tag {
             return
         }
 
         var label: String = ""
 
+        // Get the text from the button
         if let testLabel = sender.titleLabel!.text {
             label = testLabel
         }
 
+        // Show or hide the card
         if label == "" {
             showCard(sender, game.getEmoji(sender.tag))
         } else {
@@ -67,15 +70,15 @@ class ViewController: UIViewController {
         }
 
         if last2Cards.count == 2 {
-            if flipLast2Cards {
+            if flipLast2Cards { // Flip the previous 2 cards back over
                 hideCard(last2Cards[0])
                 hideCard(last2Cards[1])
                 flipLast2Cards = false
             }
-            last2Cards = []
+            last2Cards = [] // Empty the list of previous cards
         } else if last2Cards.count == 1 {
             if game.isMatch(sender.tag, last2Cards[0].tag) {
-                if game.isWin() {
+                if game.isWin() { // Check for a win
                     let alert = UIAlertController(title: "You Win",
                         message: "Congratulations",
                         preferredStyle: UIAlertControllerStyle.alert)
@@ -85,10 +88,11 @@ class ViewController: UIViewController {
                     }))
                     self.present(alert, animated: true, completion: nil)
                 }
-            } else {
+            } else { // The cards didn't match; so flip them back over later
                 flipLast2Cards = true
             }
 
+            // Adjust the moves labels
             if let movesMadeString = lblMovesMade.text,
                 let movesLeftString = lblMovesLeft.text,
                 let movesMade = Int(movesMadeString),

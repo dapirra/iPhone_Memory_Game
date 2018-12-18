@@ -44,6 +44,7 @@ class GameModel {
         return nodes[tag].getSymbol()
     }
 
+    // Check if a node has already been matched
     func isAlreadyMatched(_ tag: Int) -> Bool {
         return nodes[tag].isMatch()
     }

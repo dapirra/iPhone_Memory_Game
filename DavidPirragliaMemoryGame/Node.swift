@@ -2,8 +2,7 @@
 //  Node.swift
 //  DavidPirragliaMemoryGame
 //
-//  Created by vagrant on 12/17/18.
-//  Copyright © 2018 vagrant. All rights reserved.
+//  Created by David Pirraglia on 12/17/18.
 //
 
 import Foundation

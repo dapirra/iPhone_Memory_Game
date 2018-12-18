@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     private var lastTag: Int = -1
     private var last2Cards: [UIButton] = []
     private var flipLast2Cards: Bool = false
+    private var allButtons: [UIButton] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +51,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var button19: UIButton!
 
     @IBAction func btnClick(_ sender: UIButton) {
-        var label: String = ""
-
         if game.isAlreadyMatched(sender.tag) || lastTag == sender.tag {
             return
         }
+
+        var label: String = ""
 
         if let testLabel = sender.titleLabel!.text {
             label = testLabel
@@ -136,13 +137,15 @@ class ViewController: UIViewController {
         last2Cards = []
         lastTag = -1
 
-        let allButtons: [UIButton] = [
-            button0,  button1,  button2,  button3,
-            button4,  button5,  button6,  button7,
-            button8,  button9,  button10, button11,
-            button12, button13, button14, button15,
-            button16, button17, button18, button19
-        ]
+        if allButtons == [] {
+            allButtons = [
+                button0,  button1,  button2,  button3,
+                button4,  button5,  button6,  button7,
+                button8,  button9,  button10, button11,
+                button12, button13, button14, button15,
+                button16, button17, button18, button19
+            ]
+        }
 
         for button in allButtons {
             hideCard(button)

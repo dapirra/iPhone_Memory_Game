@@ -358,6 +358,26 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="button0" destination="Gs2-y0-J26" id="VoJ-YM-0cX"/>
+                        <outlet property="button1" destination="5gg-i0-Wb4" id="ybs-CV-3Bu"/>
+                        <outlet property="button10" destination="3sE-rr-95A" id="ACN-fe-Xi8"/>
+                        <outlet property="button11" destination="rKq-QO-Jow" id="pc9-ZY-8pK"/>
+                        <outlet property="button12" destination="1kR-d9-rD1" id="c3R-Rb-44t"/>
+                        <outlet property="button13" destination="UnY-GD-zKh" id="smg-aW-E5r"/>
+                        <outlet property="button14" destination="zfD-OP-YDa" id="pE3-7Z-kHD"/>
+                        <outlet property="button15" destination="tZt-5m-zhf" id="z1R-1z-Kbe"/>
+                        <outlet property="button16" destination="NW5-Ox-t06" id="tuk-pq-eGV"/>
+                        <outlet property="button17" destination="ODA-Au-ubX" id="LTW-mR-hCV"/>
+                        <outlet property="button18" destination="yFJ-a7-ymn" id="FZ2-mm-vmM"/>
+                        <outlet property="button19" destination="c3o-LO-4G2" id="ki9-XS-Qhh"/>
+                        <outlet property="button2" destination="c3E-Bw-L7h" id="BWm-iH-5st"/>
+                        <outlet property="button3" destination="Hfl-DJ-Ygz" id="XN1-fX-wDE"/>
+                        <outlet property="button4" destination="lig-Mt-OUu" id="khd-rt-MhJ"/>
+                        <outlet property="button5" destination="4zN-nk-a8c" id="ly5-KO-UNX"/>
+                        <outlet property="button6" destination="w3C-U2-dxG" id="pYv-em-rqu"/>
+                        <outlet property="button7" destination="E3U-ng-T3O" id="o8G-wQ-7gy"/>
+                        <outlet property="button8" destination="iWy-Af-zfW" id="amw-ez-7LL"/>
+                        <outlet property="button9" destination="KF3-6g-pgd" id="5AS-3e-pNE"/>
                         <outlet property="lblMovesLeft" destination="Y2P-UA-iya" id="q0h-HS-bUo"/>
                         <outlet property="lblMovesMade" destination="Yyz-B9-zhs" id="bRs-Hq-EEI"/>
                     </connections>

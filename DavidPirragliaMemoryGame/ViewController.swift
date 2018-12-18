@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     private var game: GameModel = GameModel()
     private var lastTag: Int = -1
-    private var lastButtons: [UIButton] = []
+    private var last2Cards: [UIButton] = []
     private var flipLast2Cards: Bool = false
 
     override func viewDidLoad() {
@@ -66,15 +66,15 @@ class ViewController: UIViewController {
             hideCard(sender)
         }
 
-        if lastButtons.count == 2 {
+        if last2Cards.count == 2 {
             if flipLast2Cards {
-                hideCard(lastButtons[0])
-                hideCard(lastButtons[1])
+                hideCard(last2Cards[0])
+                hideCard(last2Cards[1])
                 flipLast2Cards = false
             }
-            lastButtons = []
-        } else if lastButtons.count == 1 {
-            if game.isMatch(sender.tag, lastButtons[0].tag) {
+            last2Cards = []
+        } else if last2Cards.count == 1 {
+            if game.isMatch(sender.tag, last2Cards[0].tag) {
                 if game.isWin() {
                     let alert = UIAlertController(title: "You Win",
                         message: "Congratulations",
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
         }
 
         lastTag = sender.tag
-        lastButtons.append(sender)
+        last2Cards.append(sender)
     }
 
     func showCard(_ button: UIButton, _ text: String) {
@@ -133,7 +133,7 @@ class ViewController: UIViewController {
         lblMovesMade.text = "0"
         lblMovesLeft.text = "50"
 
-        lastButtons = []
+        last2Cards = []
         lastTag = -1
 
         let allButtons: [UIButton] = [

@@ -56,8 +56,11 @@ class ViewController: UIViewController {
         } else if lastButtons.count == 1 {
             if game.isMatch(sender.tag, lastButtons[0].tag) {
                 if game.isWin() {
-                    let alert = UIAlertController(title: "Congratulations", message: "You Win", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    let alert = UIAlertController(title: "You Win",
+                        message: "Congratulations",
+                        preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK",
+                        style: UIAlertActionStyle.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
             } else {
@@ -68,8 +71,18 @@ class ViewController: UIViewController {
                 let movesLeftString = lblMovesLeft.text,
                 let movesMade = Int(movesMadeString),
                 let movesLeft = Int(movesLeftString) {
+
                 lblMovesMade.text = String(movesMade + 1)
                 lblMovesLeft.text = String(movesLeft - 1)
+
+                if movesLeft == 1 { // 0 is being displayed at this point
+                    let alert = UIAlertController(title: "You Lose",
+                        message: "Better luck next time",
+                        preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK",
+                        style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
         }
 
@@ -86,7 +99,8 @@ class ViewController: UIViewController {
     func hideCard(_ button: UIButton) {
         button.setTitle("", for: UIControlState.normal)
         button.titleLabel!.text = ""
-        button.setBackgroundImage((UIImage(named: "card.jpg") as UIImage?)!, for: UIControlState.normal)
+        button.setBackgroundImage((UIImage(named: "card.jpg") as UIImage?)!,
+            for: UIControlState.normal)
     }
 }
 
